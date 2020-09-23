@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :beers
   # DSL - Domain Specific Language for Routing! Yay!
 
   # GET /companies        =>   companies#index   (Load and display all companies)
