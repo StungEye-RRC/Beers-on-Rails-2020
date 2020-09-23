@@ -1,0 +1,26 @@
+Model: Company (That maps to a db table named companies)
+ - id (auto-inc primary key)
+ - name:string
+ - created_at:timestamp
+ - updated_at:timestamp
+
+Model: Beer (That maps to a db table named beers)
+ - id (auto-inc primary key)
+ - name:string (varchar)
+ - price:decimal
+ - description:text (text)
+ - company_id:integer (FK)
+ - created_at:timestamp
+ - updated_at:timestamp
+
+Routes
+ GET /companies        =>   companies#index   (Load and display all companies)
+ GET /companies/:id    =>   companies#show    (Load and display a single company by id)
+ 
+Controller: CompaniesController
+ - action: index
+ - action: show
+
+Views:
+ - view: index: /app/views/companies/index.html.erb
+ - view: show:  /app/views/companies/show.html.erb
