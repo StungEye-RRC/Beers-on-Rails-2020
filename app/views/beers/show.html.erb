@@ -1,18 +1,20 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
+<h1>
   <%= @beer.name %>
+</h1>
+
+<p>
+  <%= @beer.description %>
 </p>
 
 <p>
   <strong>Price:</strong>
-  <%= @beer.price %>
+  <%= number_to_currency @beer.price %>
 </p>
 
 <p>
-  <strong>Description:</strong>
-  <%= @beer.description %>
+  Brewed by <%= link_to @beer.company.name, company_path(@beer.company) %>.
 </p>
 
 <%= link_to 'Edit', edit_beer_path(@beer) %> |

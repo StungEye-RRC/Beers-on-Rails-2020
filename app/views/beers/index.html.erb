@@ -15,8 +15,8 @@
   <tbody>
     <% @beers.each do |beer| %>
       <tr>
-        <td><%= beer.name %></td>
-        <td><%= beer.price %></td>
+        <td><%= beer.name %> brewed by <%= beer.company.name %></td>
+        <td><%= number_to_currency beer.price %></td>
         <td><%= beer.description %></td>
         <td><%= link_to 'Show', beer %></td>
         <td><%= link_to 'Edit', edit_beer_path(beer) %></td>
