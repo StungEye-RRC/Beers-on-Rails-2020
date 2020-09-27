@@ -1,33 +1,33 @@
 # Beers on Rails
 
-###Model: Company (That maps to a db table named companies)
+### Model: Company (That maps to a db table named companies)
 
  - id (auto-inc primary key)
  - name:string
  - created_at:timestamp
  - updated_at:timestamp
 
-###Model: Beer (That maps to a db table named beers)
+### Model: Beer (That maps to a db table named beers)
 
  - id (auto-inc primary key)
  - name:string (varchar)
  - price:decimal
  - description:text (text)
- - company_id:integer (FK)
+ - company_id:integer (FK to the companies table. one-to-many)
  - created_at:timestamp
  - updated_at:timestamp
 
 ### Controller: CompaniesController
 
- - action: index
- - action: show
+ - action: index (Load all companies)
+ - action: show  (Load a single company by id)
 
 ### Views:
 
  - view: index: /app/views/companies/index.html.erb
  - view: show:  /app/views/companies/show.html.erb
 
-###Routes
+### Routes
 
 ```
  GET    /companies        =>   companies#index   (Load and display all companies)
