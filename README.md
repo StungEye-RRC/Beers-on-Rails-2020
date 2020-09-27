@@ -1,24 +1,43 @@
-# README
+# Beers on Rails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+###Model: Company (That maps to a db table named companies)
 
-Things you may want to cover:
+ - id (auto-inc primary key)
+ - name:string
+ - created_at:timestamp
+ - updated_at:timestamp
 
-* Ruby version
+###Model: Beer (That maps to a db table named beers)
 
-* System dependencies
+ - id (auto-inc primary key)
+ - name:string (varchar)
+ - price:decimal
+ - description:text (text)
+ - company_id:integer (FK)
+ - created_at:timestamp
+ - updated_at:timestamp
 
-* Configuration
+### Controller: CompaniesController
 
-* Database creation
+ - action: index
+ - action: show
 
-* Database initialization
+### Views:
 
-* How to run the test suite
+ - view: index: /app/views/companies/index.html.erb
+ - view: show:  /app/views/companies/show.html.erb
 
-* Services (job queues, cache servers, search engines, etc.)
+###Routes
 
-* Deployment instructions
+```
+ GET    /companies        =>   companies#index   (Load and display all companies)
+ GET    /companies/:id    =>   companies#show    (Load and display a single company by id)
+ GET    /beers            =>   beers#index       (Load and display all beers)
+ GET    /beers/:id        =>   beers#show        (Load and display a single beer by id)
+ GET    /beers/new        =>   beers#new         (Display a form to create a new beer)
+ POST   /beers            =>   beers#create      (Create a beer with POSTed data)
+ GET    /beers/:id/edit   =>   beers#edit        (Display a form for editing a beer)
+ PATCH  /beers/:id        =>   beers#update      (Update a beer with PATCHed data)
+ DELETE /beers/:id        =>   beers#delete      (Delete a beer by id)
+```
 
-* ...
